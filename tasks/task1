@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" lang="russian">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Box on Input Match</title>
+    <style>
+        #hidden-box {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<p>
+Solve the riddle:
+<br>
+In vibrant red, I flutter with ease,
+<br>
+A polka-dotted shield, a petite tease.
+<br>
+With luck on my side, I dance and play,
+<br>
+Can you guess who I am at the end of the day?
+<br>
+</p>
+<p>
+<br>
+(russian version)
+<br>
+Скрытая в маске, в чёрном одеянии,
+<br>
+Бритва-острие, в битве несравненна.
+<br>
+Защитница города, супергероиня,
+<br>
+Кто она, вопрос загадки моей?
+<br>
+</p>
+
+    <label for="inputText">Введите ответ:</label>
+    <input type="text" id="inputText">
+    <button id="showButton">отправить</button>
+
+    <div id="hidden-box">
+        <p>Молодец Правильно.</p>
+        <button>
+		<form action="task2.html">
+    <input type="submit" value="Task 2" />
+</form>
+		</button>
+    </div>
+
+    <script>
+        document.getElementById("showButton").addEventListener("click", function () {
+            const inputText = document.getElementById("inputText").value;
+            const hiddenBox = document.getElementById("hidden-box");
+
+            if (inputText.toLowerCase() === "леди баг" || inputText.toLowerCase() === "lady bug") {
+                hiddenBox.style.display = "block";
+            } else {
+                alert("Неправильно, повторите еще");
+            }
+        });
+    </script>
+</body>
+</html>
